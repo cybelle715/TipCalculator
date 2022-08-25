@@ -1,8 +1,3 @@
-let billVal = 0;
-let peopleVal = 1;
-let tipVal = 0.15;
-
-
 const input = document.getElementById('amount')
 const button = document.querySelectorAll('.btn')
 const customTip = document.getElementById('CustomTip');
@@ -11,19 +6,21 @@ const people = document.getElementById('people')
 const totalVal = document.querySelectorAll('.Value')
 const reset = document.querySelector('.reset')
 
+let billVal = 0;
+let peopleVal = 1;
+let tipVal = 0.15;
 
-input.addEventListener('amount',validateBill);
+input.addEventListener('input',validateBill);
 
 function validateBill(){
-    if(amount.value.includes(',')){
-        amount.value.replace(',','.')
+    if(input.value.includes(',')){
+        input.value.replace(',','.')
     }
-    billVal = parseFloat(amount.value);
+    billVal = parseFloat(input.value);
     calculate()
     console.log(billVal)
 }
-
-customTip.addEventListener('input',tipCustomVal);
+CustomTip.addEventListener('input',tipCustomVal);
 people.addEventListener('input',setPeopleVal)
 reset.addEventListener('click',handleReset);
 
@@ -39,7 +36,6 @@ function handleClick(event){
         if(event.target.innerHTML === btn.innerHTML){
             btn.classList.add('active');
             tipVal = parseFloat(btn.innerHTML)/100
-            
             console.log(tipVal)
         }
     })
