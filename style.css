@@ -12,12 +12,17 @@ body{
     justify-content: center;
     margin-block: 20px;
 }
+div{
+    display: block;
+}
 
 .mainContainer{
     background-color: #fff;
     border-radius: 20px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     height: 1440px;
+    padding: 3rem;
 }
 
 .leftSection{
@@ -177,8 +182,8 @@ input[type=number] {
 }
 
 .footer {
-    flex-direction: row-reverse;
-    position: absolute;
+    flex-direction: row;
+   
     bottom: 0;
     left: 0;
     display: flex;
@@ -198,9 +203,10 @@ input[type=number] {
     background-color:hsl(184, 14%, 56%);
   }
 
-@media screen and (min-width : 375px   ) {
+@media screen and (min-width : 1000px   ) {
     .mainContainer {
         display: flex;
+        flex-direction:row;
         width: 920px;
         height : 490px;
         margin : 0 auto;
